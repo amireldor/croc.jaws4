@@ -1,0 +1,16 @@
+{
+  "name": "croc.jaws",
+  "version": "4.0.0",
+  "main": "src/main.js",
+  "author": "Amir Eldor",
+  "license": "Unlicensed",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "eslint": "^3.10.2",
+    "stylus-loader": "^2.3.1",
+    "webpack": "^1.13.3"
+  }
+}

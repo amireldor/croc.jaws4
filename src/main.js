@@ -1,4 +1,5 @@
-const animals = {'him': 12, 'herzl': 4, 'denmark': -3};
+const animals = {'him': 22, 'herzl': 241, 'cat': 'dig', 'denmark': -3};
 let {herzl} = animals;
 
-document.write('hi ' + herzl);
+document.write('howdy ' + herzl);
+

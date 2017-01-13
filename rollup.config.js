@@ -3,19 +3,9 @@ import babelrc from 'babelrc-rollup'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 
-const pkg = require('./package.json')
-const external = Object.keys(pkg.dependencies)
-
-const globals = {}
-external.map(ext => {
-  switch (ext) {
-  case 'mithril':
-    globals['mithril'] = 'm'
-    break
-  default:
-    globals[ext] = ext
-  }
-})
+const globals = {
+  'mithril': 'm'
+}
 
 const config = {
   entry: 'src/main.js',
@@ -28,7 +18,6 @@ const config = {
     }),
     babel(babelrc()),
   ],
-  external: null,
   globals,
   targets: [
     {

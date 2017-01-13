@@ -7,5 +7,4 @@ let view = function () {
   ]);
 }
 
-const rendered = m.render(view())
-console.log(rendered)
+m.render(document.body, view())

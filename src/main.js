@@ -1,10 +1,11 @@
-import { MAGIC_NUMBER } from './lib';
+import m from 'mithril'
 
-const animals = {'him': 22, 'herzl': 241, 'cat': 'dig', 'denmark': -3};
-let {herzl, cat} = animals;
+let view = function () {
+  return m('div', [
+    m('h1.title', "fun!"),
+    m('p', "I like your tie."),
+  ]);
+}
 
-document.write('howdy ' + herzl);
-document.write(' meow ' + cat);
-
-
-document.write(MAGIC_NUMBER);
+const rendered = m.render(view())
+console.log(rendered)

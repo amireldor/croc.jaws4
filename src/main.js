@@ -1,7 +1,7 @@
 import m from 'mithril'
-import MainComponent from './components/Main'
+import AppComponent from './components/App'
 
-m.mount(document.getElementById('crocfarm'), MainComponent)
+m.mount(document.getElementById('crocfarm'), AppComponent)
 
 
 

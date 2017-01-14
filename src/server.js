@@ -1,7 +1,9 @@
 import 'babel-polyfill'
 import koa from 'koa'
 import pug from 'pug'
+import mithrilRender from 'mithril-node-render'
 
+import tempView from './temp.view'
 
 const pugFile = './templates/base.pug'
 
@@ -9,16 +11,18 @@ const app = koa()
 const compiledPug = !process.env.DEV && pug.compileFile(pugFile)
 
 app.use(function *() {
-  let html;
-  const params = { app: 'app app <strong>very strong</strong>' }
+  const mithrilHtml = mithrilRender(tempView)
+  
+  let pugHtml;
+  const params = { app: mithrilHtml }
 
   if (!process.env.DEV) {
-    html = compiledPug(params)
+    pugHtml = compiledPug(params)
   } else {
-    html = pug.renderFile(pugFile, params)
+    pugHtml = pug.renderFile(pugFile, params)
   }
 
-  this.body = html
+  this.body = pugHtml
 })
 
 const port = process.env.PORT || 3000

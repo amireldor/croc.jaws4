@@ -1,11 +1,8 @@
 import {baseConfig} from './rollup.config.base'
 
 
-const external = [
-  'koa',
-  'babel-polyfill',
-]
-
+const pkg = require('./package.json')
+const external = Object.keys(pkg.dependencies)
 
 const serverConfig = Object.assign(
   baseConfig,

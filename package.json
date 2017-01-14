@@ -24,7 +24,8 @@
     "babel-polyfill": "^6.20.0",
     "koa": "^1.2.4",
     "mithril": "rewrite",
-    "mithril-node-render": "rewrite"
+    "mithril-node-render": "rewrite",
+    "pug": "^2.0.0-beta6"
   },
   "scripts": {
     "server-dev": "rollup -c rollup.config.server.js -w",

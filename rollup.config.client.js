@@ -16,7 +16,9 @@ const config = {
     commonjs({
       include: 'node_modules/**',
     }),
-    babel(babelrc()),
+    babel(babelrc({
+      addModuleOptions: false
+    })),
   ],
   globals,
   targets: [

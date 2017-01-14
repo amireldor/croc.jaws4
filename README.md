@@ -1,6 +1,17 @@
 (in-progress readme)
 
 
-Run `server.js` from within `build/` - make environment variable `DEV`
-undefined (e.g. `DEV=crocodile nodemon server.js`) to reload pug
-template nicely and maybe other stuff.
+npm tasks:
+----------
+
+ - `dev-server`
+ - `dev-client`
+ 
+They run rollup with the appropriate config file to watch over changes
+in code and builds bundles accordingly.
+
+ - `mon`
+ 
+This runs `nodemon` in dev settings inside the build folder. This will
+not re-render pug templates instead of compiling them. This is
+sometimes good for you.

@@ -30,7 +30,8 @@
     "pug": "^2.0.0-beta6"
   },
   "scripts": {
-    "server-dev": "rollup -c rollup.config.server.js -w",
-    "client-dev": "rollup -c rollup.config.client.js -w"
+    "dev-server": "rollup -c rollup.config.server.js -w",
+    "dev-client": "rollup -c rollup.config.client.js -w",
+    "mon": "cd build; DEV=funfunfun nodemon server.js"
   }
 }

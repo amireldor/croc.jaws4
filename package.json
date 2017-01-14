@@ -11,6 +11,7 @@
     "babel-loader": "^6.2.8",
     "babel-plugin-external-helpers": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
     "babelrc-rollup": "^3.0.0",
     "eslint": "^3.10.2",
     "rollup": "^0.41.2",
@@ -20,9 +21,13 @@
     "rollup-watch": "^3.2.2"
   },
   "dependencies": {
-    "mithril": "rewrite"
+    "babel-polyfill": "^6.20.0",
+    "koa": "^1.2.4",
+    "mithril": "rewrite",
+    "mithril-node-render": "rewrite"
   },
   "scripts": {
-    "start": "rollup -c -w"
+    "server": "rollup -c rollup.config.server.js -w",
+    "client": "rollup -c rollup.config.client.js -w"
   }
 }

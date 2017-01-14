@@ -3,30 +3,38 @@ import babelrc from 'babelrc-rollup'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 
+const external = [
+  'koa',
+  'babel-polyfill',
+]
+
 const globals = {
-  'mithril': 'm'
+  'mithril': 'm',
 }
 
 const config = {
-  entry: 'src/main.js',
+  entry: 'src/server.js',
   plugins: [
     nodeResolve({
-      browser: true,
     }),
     commonjs({
       include: 'node_modules/**',
     }),
-    babel(babelrc()),
+    babel(babelrc({
+      addModuleOptions: false,  // needed for stage-0 to load properly
+      // (options for es2015 is given in .baberc)
+    })),
   ],
+  external,
   globals,
   targets: [
     {
-      dest: 'build/crocfarm.js',
-      format: 'iife',
+      dest: 'build/server.js',
+      format: 'cjs',
       sourceMaps: true,
-      moduleName: 'crocfarm',
+      sourceMapFile: 'server.js.map',
     }
   ]
 }
 
-export default config; 
+export default config;

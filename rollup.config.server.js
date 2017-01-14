@@ -13,8 +13,6 @@ const serverConfig = Object.assign(
       {
         dest: 'build/server.js',
         format: 'cjs',
-        sourceMaps: true,
-        sourceMapFile: 'server.js.map',
       }
     ],
   })

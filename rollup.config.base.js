@@ -20,4 +20,5 @@ export const basePlugins = [
 export const baseConfig = {
   plugins: basePlugins,
   globals,
+  sourceMap: true,
 }

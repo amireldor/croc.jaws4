@@ -11,13 +11,18 @@ export default {
   controller: function (args) {
   },
   view: function (ctrl, args) {
-    return m('ul', this.getDocTypesNodes())
+    return m('div.main-options', [
+      m('ul', this.getDocTypesNodes()),
+    ])
   },
   getDocTypesNodes: function () {
-    const nodes = [];
+    let nodes = [];
     for (let [type, opts] of Object.entries(docTypes)) {
       nodes.push(m('li', `${type} ${opts.disabled === true ? ' - no soup for you!' : ''}`))
     }
+    nodes = nodes.concat([
+      m('li', "About croc.farm"),
+    ])
     return nodes
   }
 }

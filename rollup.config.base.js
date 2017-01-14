@@ -13,7 +13,8 @@ export const baseConfig = {
       browser: true,
     }),
     commonjs({
-      include: 'node_modules/**',
+      addModuleOptions: false,  // needed for stage-0 to load properly
+      // (options for es2015 is given in .baberc)
     }),
     babel(babelrc({
       addModuleOptions: false

@@ -10,7 +10,7 @@ export const globals = {
 export const baseConfig = {
   plugins: [
     nodeResolve({
-      browser: true,
+      browser: true,  // TODO: this also propagates to rollup.config.server.js - troublesome?
     }),
     commonjs({
       addModuleOptions: false,  // needed for stage-0 to load properly

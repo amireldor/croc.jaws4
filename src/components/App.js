@@ -1,6 +1,8 @@
 import m from 'mithril'
 
-import MainOptions from './MainOptions'
+import OptionsArea from './OptionsArea'
+import ContentArea from './ContentArea'
+import ActionArea from './ActionArea'
 
 export default {
   controller: function (args) {
@@ -8,7 +10,9 @@ export default {
   view: function (ctrl, args) {
     return m('div.app', [
       m('h1', "This is fun"),
-      MainOptions,
+      OptionsArea,
+      ContentArea,
+      ActionArea,
     ])
   }
 }

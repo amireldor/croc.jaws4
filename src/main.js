@@ -1,4 +1,7 @@
 import m from 'mithril'
-import tempView from './temp.view'
+import MainComponent from './components/Main'
 
-m.render(document.body, tempView)
+m.mount(document.getElementById('crocfarm'), MainComponent)
+
+
+

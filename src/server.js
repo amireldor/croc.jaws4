@@ -7,20 +7,21 @@ import mithrilRender from 'mithril-node-render'
 
 import AppComponent from './components/App'
 
+const __DEV__ = process.env.DEV
+
 const pugFile = './templates/base.pug'
-const compiledPug = !process.env.DEV && pug.compileFile(pugFile)
+const compiledPug = !__DEV__ && pug.compileFile(pugFile)
 
 const app = koa()
 
-app.use(mount('/teeth', serve('./teeth/')))
-
+app.use(mount('/teeth', serve('./teeth')))
 app.use(function *() {
   const mithrilHtml = mithrilRender(AppComponent)
   
   let pugHtml;
   const params = { app: mithrilHtml }
 
-  if (!process.env.DEV) {
+  if (!__DEV__) {
     pugHtml = compiledPug(params)
   } else {
     pugHtml = pug.renderFile(pugFile, params)

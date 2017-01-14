@@ -27,7 +27,7 @@
     "mithril-node-render": "rewrite"
   },
   "scripts": {
-    "server": "rollup -c rollup.config.server.js -w",
-    "client": "rollup -c rollup.config.client.js -w"
+    "server-dev": "rollup -c rollup.config.server.js -w",
+    "client-dev": "rollup -c rollup.config.client.js -w"
   }
 }

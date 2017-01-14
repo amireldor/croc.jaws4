@@ -10,7 +10,7 @@ const compiledPug = !process.env.DEV && pug.compileFile(pugFile)
 
 app.use(function *() {
   let html;
-  const params = { fun: 'horse' }
+  const params = { app: 'app app <strong>very strong</strong>' }
 
   if (!process.env.DEV) {
     html = compiledPug(params)

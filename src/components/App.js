@@ -4,11 +4,14 @@ import OptionsArea from './OptionsArea'
 import ContentArea from './ContentArea'
 import ActionArea from './ActionArea'
 
+import styles from './App.styl'
+
 export default {
   controller: function (args) {
   },
+
   view: function (ctrl, args) {
-    return m('div.app', [
+    return m('div.app', { class: styles.app }, [
       m('h1', "This is fun"),
       OptionsArea,
       ContentArea,

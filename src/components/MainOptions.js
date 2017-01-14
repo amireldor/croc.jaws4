@@ -15,11 +15,9 @@ export default {
   },
   getDocTypesNodes: function () {
     const nodes = [];
-    //for (let [type, opts] of Object.entries(docTypes)) {
-    //  //nodes.push(m('li', `${type} ${opts.disabled === true ? ' - no soup for you!' : ''}`))
-    //  nodes.push(m('li', type))
-    //}
-    nodes.push(m('li', 'nice'))
+    for (let [type, opts] of Object.entries(docTypes)) {
+      nodes.push(m('li', `${type} ${opts.disabled === true ? ' - no soup for you!' : ''}`))
+    }
     return nodes
   }
 }

@@ -1,4 +1,5 @@
 import m from 'mithril'
+import commonStyles from './commonStyles.styl'
 
 export const docTypes = {
   'plain': {},
@@ -10,11 +11,13 @@ export const docTypes = {
 export default {
   controller: function (args) {
   },
+
   view: function (ctrl, args) {
-    return m('div.main-options', [
+    return m('div.options-area', { class: commonStyles.area }, [
       m('ul', this.getDocTypesNodes()),
     ])
   },
+
   getDocTypesNodes: function () {
     let nodes = [];
     for (let [type, opts] of Object.entries(docTypes)) {

@@ -5,10 +5,10 @@ export default {
   },
 
   view: function (ctrl, args) {
-    return m('div', [
+    return m('div.content-area', [
       m('h2', "Content Area"),
 
-      m('div.content-area.meal', [
+      m('div.meal', [
         m('div.meta', [
           m('h3', "per-meal settings"),
           m('ul', [

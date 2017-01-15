@@ -5,11 +5,12 @@ export default {
   },
 
   view: function (ctrl, args) {
-    return m('div', [
+    return m('div.action-area', [
       m('div.submit', [
         m('h3', "feed the croc"),
         m('button', "Feed the croc!")
       ]),
+
       m('div.meals', [
         m('h3', "your latest meals"),
         m('ul', [

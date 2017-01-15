@@ -10,6 +10,9 @@ export const globals = {
 export const basePlugins = [
   stylusCssModules({
       output: 'build/teeth/crocfarm.css',
+//      output: function (css) {
+//          console.log(`CSS: ${css}`)
+//      }
   }),
   nodeResolve({}),
   babel(babelrc({

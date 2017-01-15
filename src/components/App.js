@@ -11,7 +11,7 @@ export default {
   },
 
   view: function (ctrl, args) {
-    return m('div.app', { class: styles.app }, [
+    return m('div', { class: styles.app }, [
       m('h1', "This is fun"),
       OptionsArea,
       ContentArea,

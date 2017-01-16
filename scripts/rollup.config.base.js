@@ -1,3 +1,6 @@
+// TODO: don't use rollup.config.*.js, do something with the
+// dev-watch.js script wisely so you can both watch and build either
+// server or client
 import babel from 'rollup-plugin-babel'
 import babelrc from 'babelrc-rollup'
 import nodeResolve from 'rollup-plugin-node-resolve'

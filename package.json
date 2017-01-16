@@ -5,11 +5,12 @@
   "author": "Amir Eldor",
   "license": "Unlicensed",
   "devDependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.8",
     "babel-plugin-external-helpers": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
     "babel-preset-es2017": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babelrc-rollup": "^3.0.0",
@@ -31,6 +32,7 @@
     "rollup-plugin-stylus-css-modules": "^1.2.3"
   },
   "scripts": {
+    "dev": "babel-node scripts/dev-watch.js --presets=es2015,stage-0",
     "dev-server": "rollup -c rollup.config.server.js -w",
     "dev-client": "rollup -c rollup.config.client.js -w",
     "mon": "cd build; DEV=funfunfun nodemon server.js"

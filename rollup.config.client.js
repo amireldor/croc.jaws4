@@ -7,7 +7,7 @@ import stylusCssModules from 'rollup-plugin-stylus-css-modules'
 
 const plugins = [
   stylusCssModules({
-      output: 'build/teeth/crocfarm.css',
+//      output: 'build/teeth/crocfarm.css',
   }),
   nodeResolve({}),
   commonjs({ addModuleOptions: false }),

@@ -49,6 +49,7 @@ let config = {
 let clientConfig = {
   ...config,
   plugins: makePlugins([
+    stylusCssModules(),  // intentional no-op
     commonjs({ addModuleOptions: false }),
   ]),
   entry: 'src/main.js',

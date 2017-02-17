@@ -33,8 +33,6 @@
   },
   "scripts": {
     "dev": "babel-node scripts/dev-watch.js --presets=es2015,stage-0",
-    "dev-server": "rollup -c rollup.config.server.js -w",
-    "dev-client": "rollup -c rollup.config.client.js -w",
     "mon": "cd build; DEV=funfunfun nodemon server.js"
   }
 }

@@ -8,8 +8,9 @@ import fs from 'fs'
 import path from 'path'
 
 const outputDir = 'build/'
+const outputStaticDir = 'build/teeth/'
 const serverFilePath = path.join(outputDir, 'server.js')
-const clientFilePath = path.join(outputDir, 'teeth', 'crocfarm.js')
+const clientFilePath = path.join(outputStaticDir, 'crocfarm.js')
 
 export const globals = {
   'mithril': 'm'
@@ -21,6 +22,7 @@ const external = Object.keys(pkg.dependencies)
 let compiledStylesheets = []
 
 function addStylesheet(css) {
+  console.log(css, 'add stylesheet')
   compiledStylesheets.push(css)
 }
 
@@ -70,12 +72,19 @@ let clientBundleCache, serverBundleCache
 
 console.log("bundling server...")
 rollup.rollup(serverConfig).then(bundle => {
+
   serverBundleCache = bundle
   bundle.write({
     format: 'cjs',
     dest: serverFilePath,
   })
-})
+
+}).then(writeFinalCss).then(() => console.log('HELLO TEST'))
+
+function writeFinalCss() {
+  console.log('writingfina css')
+  fs.writeFileSync(path.join(outputStaticDir, 'croclipstick.css'), getConcatenatedStylesheets())
+}
 
 console.log("bundling client...")
 rollup.rollup(clientConfig).then(bundle => {

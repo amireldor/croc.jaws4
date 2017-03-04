@@ -12,7 +12,7 @@ export default {
 
   view: function (ctrl, args) {
     return m('div', { class: styles.app }, [
-      m('h1', "This is fun"),
+      m('h1', { class: styles.title },"This is fun"),
       OptionsArea,
       ContentArea,
       ActionArea,

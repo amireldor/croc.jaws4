@@ -1,4 +1,6 @@
-import * as rollup from 'rollup'
+import rollup from 'rollup'
+console.log("rollup", rollup)
+/*
 import babel from 'rollup-plugin-babel'
 import babelrc from 'babelrc-rollup'
 import nodeResolve from 'rollup-plugin-node-resolve'
@@ -12,23 +14,8 @@ const outputStaticDir = 'build/teeth/'
 const serverFilePath = path.join(outputDir, 'server.js')
 const clientFilePath = path.join(outputStaticDir, 'crocfarm.js')
 
-export const globals = {
-  'mithril': 'm'
-}
-
 const pkg = require('../package.json')
 const external = Object.keys(pkg.dependencies)
-
-let compiledStylesheets = []
-
-function addStylesheet(css) {
-  console.log(css, 'add stylesheet')
-  compiledStylesheets.push(css)
-}
-
-function getConcatenatedStylesheets() {
-  return compiledStylesheets.join('\n')
-}
 
 const pluginsFirst = [
   nodeResolve(),
@@ -44,7 +31,6 @@ function makePlugins(pluginsMiddle = []) {
 }
 
 let config = {
-  globals,
   sourceMap: true
 }
 
@@ -60,9 +46,7 @@ let clientConfig = {
 let serverConfig = {
   ...config,
   plugins: makePlugins([
-    stylusCssModules({
-      output: addStylesheet
-    }),
+    stylusCssModules({}),
   ]),
   external,
   entry: 'src/server.js',
@@ -72,19 +56,13 @@ let clientBundleCache, serverBundleCache
 
 console.log("bundling server...")
 rollup.rollup(serverConfig).then(bundle => {
-
   serverBundleCache = bundle
   bundle.write({
     format: 'cjs',
     dest: serverFilePath,
   })
 
-}).then(writeFinalCss).then(() => console.log('HELLO TEST'))
-
-function writeFinalCss() {
-  console.log('writingfina css')
-  fs.writeFileSync(path.join(outputStaticDir, 'croclipstick.css'), getConcatenatedStylesheets())
-}
+})//.then(writeFinalCss).then(() => console.log('HELLO TEST'))
 
 console.log("bundling client...")
 rollup.rollup(clientConfig).then(bundle => {
@@ -97,3 +75,4 @@ rollup.rollup(clientConfig).then(bundle => {
 }).catch(error => {
   console.error(`client bundle error: ${error}`)
 })
+*/

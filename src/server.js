@@ -3,9 +3,6 @@ import koa from 'koa'
 import mount from 'koa-mount'
 import serve from 'koa-static'
 import pug from 'pug'
-import mithrilRender from 'mithril-node-render'
-
-import AppComponent from './components/App'
 
 const __DEV__ = process.env.DEV
 
@@ -16,10 +13,12 @@ const app = koa()
 
 app.use(mount('/teeth', serve('./teeth')))
 app.use(function *() {
-  const mithrilHtml = mithrilRender(AppComponent)
+  // render the app to html
+  // const appHtml = riotjs.renderWhatever(whatever)
   
   let pugHtml;
-  const params = { app: mithrilHtml }
+  // pass html as params to template
+  const params = {}
 
   if (!__DEV__) {
     pugHtml = compiledPug(params)

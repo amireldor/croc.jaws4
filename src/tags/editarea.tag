@@ -49,3 +49,4 @@ editarea
       border 1px solid red
 
       background lime
+      white-space normal

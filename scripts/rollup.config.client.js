@@ -13,5 +13,6 @@ let plugins = [
 export default {
   entry: "src/client.js",
   dest: "build/public/client.js",
+  format: "es",
   plugins,
 }

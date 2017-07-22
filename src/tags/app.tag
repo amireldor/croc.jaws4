@@ -1,29 +1,11 @@
-<app>
+app
+  sitehead
+  p I like mishmesh
 
-  header
-    div.title
-      h1
-        a(href="/") croc.farm
-      | -
-      |
-      span.slogan remember the animals
-    div.description.
-      Let the croc help you move a piece of data between your machines.  You
-      paste or type some text (a useful URL? an ugly GUID or document
-      ID?) and the croc eats an animal and provide you with a temporary, easily
-      remembered URL for accessing on your other device.
+  style.
+    p {
+      color: lime;
+    }
 
-  <style>
-
-    header
-      .title
-        & > *
-          display inline
-        text-align center
-
-  </style>
-
-  <script>
-  </script>
-
-</app>
+  script.
+    console.log('hello')

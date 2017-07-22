@@ -39,7 +39,7 @@
     "mon": "cd build; DEV=funfunfun nodemon server.js",
     "client": "rollup --watch --config scripts/rollup.config.client.js",
     "html": "pug --watch src/templates/ --out build/public/",
-    "css": "riot src/tags/ build/public/riot.css --watch --style stylus --colors --export css",
+    "css": "riot src/tags/ build/public/riot.css --watch --template pug --export css --colors",
     "riot": "riot src/tags/ build/public/tags.js --watch --template pug --exclude css --colors"
   }
 }

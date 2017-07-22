@@ -1,7 +1,7 @@
 app
   sitehead(short="{ shortHeader }")
   notfound(if="{ notFound }" animal="james")
-  editarea
+  editarea.grow
 
   style.
     @import "globals.styl"
@@ -9,17 +9,24 @@ app
     :scope
       font-family $main-font
 
-      display grid
-      grid-template-columns 100%
-      grid-columns-gap 100px
-      justify-content center
-      justify-items stretch
+      position absolute
+      top 0
+      left 0
+      width 100vw
+      min-height 100vh
+
+      display flex
+      flex-direction column
 
       & > *
         margin 0
         padding 10px
+        outline: 1px solid orange
+
+    .grow
+      flex-grow 1
 
 
   script.
     this.shortHeader = true
-    this.notFound = true
+    this.notFound = false

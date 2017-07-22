@@ -14,9 +14,9 @@ sitehead
 
     p amir: { opts.short }
 
-  style(type="stylus").
+  style.
     p
-      color red
+      background orange
 
   script.
     console.log("sit ehead")

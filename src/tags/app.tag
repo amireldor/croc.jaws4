@@ -3,9 +3,8 @@ app
   p I like mishmesh
 
   style.
-    p {
-      color: lime;
-    }
+    p
+      background cyan
 
   script.
     console.log('hello')

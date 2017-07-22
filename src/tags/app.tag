@@ -1,12 +1,13 @@
 <app>
   <h1>Hello, this is croc.farm</h1>
+
   <test>ok</test>
+  <test2>hello</test2>
 
   <style>
-  $color1: red;
-
-  h1 {
-    color: $color1;
+  p {
+    color: lime;
+    background: black;
   }
   </style>
 

@@ -14,8 +14,6 @@ sitehead
       | ID?) and the croc eats an animal and provide you with a temporary, easily
       | remembered URL for accessing on your other device.
 
-    p amir: { opts.short }
-
 
   style.
     .title

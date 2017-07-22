@@ -1,21 +1,13 @@
 app
-  sitehead(short="{amir}")
-  p(onclick="{click}") I like mishmesh
+  sitehead(short="{ shortHeader }")
+  notfound(if="{ notFound }" animal="james")
 
   style.
-    p
-      background cyan
+    @import "globals.styl"
+
+    :scope
+      font-family sans
 
   script.
-    this.amir = true
-
-    click() {
-      console.log('click')
-      toggle()
-    }
-
-    toggle = () => {
-      this.amir = !this.amir
-      console.log("toggled:", this.amir)
-    }
-
+    this.shortHeader = true
+    this.notFound = true

@@ -21,5 +21,5 @@ notfound
       text-decoration line-through
 
       padding 20px
+      width 70%
       margin auto
-      width 70vw

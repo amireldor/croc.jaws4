@@ -1,5 +1,5 @@
 app
-  sitehead
+  sitehead(short="{amir}")
   p I like mishmesh
 
   style.
@@ -7,4 +7,4 @@ app
       background cyan
 
   script.
-    console.log('hello')
+    this.amir = "eldor"

@@ -35,7 +35,11 @@
     "riotjs": "^1.0.4"
   },
   "scripts": {
-    "dev": "concurrently \"rollup --watch --config scripts/rollup.config.server.js\" \"rollup --watch --config scripts/rollup.config.client.js\" \"pug --watch src/templates/ --out build/public/\" \"riot src/tags/ build/public/tags.js --watch --style scss\"",
-    "mon": "cd build; DEV=funfunfun nodemon server.js"
+    "dev": "concurrently \"yarn run client\" \"yarn run html\" \"yarn run css\" \"yarn run riot\"",
+    "mon": "cd build; DEV=funfunfun nodemon server.js",
+    "client": "rollup --watch --config scripts/rollup.config.client.js",
+    "html": "pug --watch src/templates/ --out build/public/",
+    "css": "riot src/tags/ build/public/riot.css --watch --style scss --colors --export css",
+    "riot": "riot src/tags/ build/public/tags.js --watch --exclude css --colors"
   }
 }

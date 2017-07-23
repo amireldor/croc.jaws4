@@ -32,14 +32,15 @@
     "koa-mount": "^1.3.0",
     "koa-static": "^2.0.0",
     "pug": "^2.0.0-beta6",
+    "riot-route": "^3.1.2",
     "riotjs": "^1.0.4"
   },
   "scripts": {
-    "dev": "concurrently \"yarn run client\" \"yarn run html\" \"yarn run css\" \"yarn run riot\"",
-    "mon": "cd build; DEV=funfunfun nodemon server.js",
+    "start": "concurrently \"yarn run client\" \"yarn run html\" \"yarn run css\" \"yarn run riot\" \"yarn run local-server\"",
     "client": "rollup --watch --config scripts/rollup.config.client.js",
     "html": "pug --watch src/templates/ --out build/public/",
     "css": "riot src/tags/ build/public/riot.css --watch --template pug --export css --style stylus --colors",
-    "riot": "riot src/tags/ build/public/tags.js --watch --template pug --exclude css --colors"
+    "riot": "riot src/tags/ build/public/tags.js --watch --template pug --exclude css --colors",
+    "local-server": "cd build/public && python3 -m http.server"
   }
 }

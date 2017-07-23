@@ -1,7 +1,15 @@
 app
   sitehead(short="{ shortHeader }")
-  notfound(if="{ notFound }" animal="james")
-  editarea.grow
+
+  a(href="egoz") egoz
+  a(href="nice") nice
+
+  router
+    route(path="nice")
+      notfound(if="{ notFound }" animal="james")
+      editarea.grow
+    route(path="egoz")
+      <p>egoz</p>
 
   style.
     @import "globals.styl"
